@@ -1,0 +1,22 @@
+.sub-header {
+  text-align: center;
+}
+
+.input {
+  margin-bottom: 40px;
+  margin-right: 5px;
+}
+
+.add-button {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.add-button:hover {
+  cursor: pointer;
+}
+
+.add-button:active {
+  background-color: lightgrey;
+}
