@@ -3,7 +3,6 @@ import Input from "./components/input/input";
 import { useState } from "react";
 function App() {
   const [task, setTask] = useState([]);
-  const [completed, setCompleted] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const handleChange = (e) => {
     setInputValue(e.target.value);
@@ -15,7 +14,7 @@ function App() {
     const toDo = {
       id: Date.now(),
       text: inputValue,
-      completed: completed,
+      completed: false,
     };
 
     setTask((prevTask) => [...prevTask, toDo]);
