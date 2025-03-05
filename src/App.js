@@ -22,6 +22,10 @@ function App() {
     setInputValue("");
   };
 
+  const clearTask = (id) => {
+    setTask(task.filter((task) => task.id !== id));
+  };
+
   const completeTask = (id) => {
     setTask(
       task.map((task) => {
@@ -60,11 +64,18 @@ function App() {
                   <p className="task">{task.text}</p>
                 </span>
                 <div className="complete-box">
-                  <p>Completed:</p>
-                  <input
-                    type="checkbox"
-                    onClick={() => completeTask(task.id)} // Mark the task as completed
-                  />
+                  <p
+                    className="status-icons"
+                    onClick={() => completeTask(task.id)}
+                  >
+                    ✅
+                  </p>
+                  <p
+                    className="status-icons"
+                    onClick={() => clearTask(task.id)}
+                  >
+                    ❌
+                  </p>
                 </div>
               </div>
             ))}
@@ -79,6 +90,9 @@ function App() {
                 <span>
                   <p className="task">{task.text}</p>
                 </span>
+                <p className="status-icons" onClick={() => clearTask(task.id)}>
+                  ❌
+                </p>
               </div>
             ))}
         </div>
